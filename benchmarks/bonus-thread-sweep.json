@@ -1,0 +1,26 @@
+[
+  {
+    "threads": 1,
+    "tok_s": 0.0
+  },
+  {
+    "threads": 2,
+    "tok_s": 0.0
+  },
+  {
+    "threads": 6,
+    "tok_s": 0.0
+  },
+  {
+    "threads": 12,
+    "tok_s": 0.0
+  },
+  {
+    "threads": 14,
+    "tok_s": 0.0
+  },
+  {
+    "threads": 28,
+    "tok_s": 0.0
+  }
+]

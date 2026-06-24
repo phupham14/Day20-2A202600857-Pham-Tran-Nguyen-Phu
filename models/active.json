@@ -1,0 +1,6 @@
+{
+  "tier": "Qwen2.5-7B-Instruct",
+  "repo_id": "bartowski/Qwen2.5-7B-Instruct-GGUF",
+  "primary_model": "models\\Qwen2.5-7B-Instruct-Q4_K_M.gguf",
+  "compare_model": "models\\Qwen2.5-7B-Instruct-Q2_K.gguf"
+}

@@ -1,0 +1,36 @@
+{
+  "cpu": {
+    "arch": "AMD64",
+    "cores_logical": 14,
+    "model": "Intel(R) Core(TM) Ultra 7 255U",
+    "cores_physical": 12
+  },
+  "ram_gb": 31.5,
+  "gpu": {
+    "backends": {
+      "nvidia_cuda": false,
+      "amd_rocm": false,
+      "apple_metal": false,
+      "vulkan": true,
+      "cpu_only": false
+    },
+    "details": {
+      "vulkan": "device present"
+    }
+  },
+  "docker": {
+    "docker": false,
+    "compose": true
+  },
+  "recommendation": {
+    "recommended_paths": [
+      "01-llama-cpp-quickstart",
+      "02-llama-cpp-server",
+      "03-milestone-integration",
+      "BONUS-llama-cpp-optimization"
+    ],
+    "recommended_model": "Qwen2.5-7B-Instruct (Q4_K_M)",
+    "llama_cpp_backend": "Vulkan",
+    "llama_cpp_cmake_flag": "-DGGML_VULKAN=on"
+  }
+}

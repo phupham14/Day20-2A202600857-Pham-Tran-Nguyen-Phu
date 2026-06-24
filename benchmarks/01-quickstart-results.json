@@ -1,0 +1,36 @@
+{
+  "primary": {
+    "label": "primary (Q4_K_M)",
+    "model_path": "models\\Qwen2.5-7B-Instruct-Q4_K_M.gguf",
+    "n_threads": 12,
+    "n_ctx": 2048,
+    "n_batch": 512,
+    "n_gpu_layers": 99,
+    "load_ms": 6084.7,
+    "ttft_ms_p50": 846.5,
+    "ttft_ms_p95": 7168.8,
+    "tpot_ms_p50": 150.83,
+    "tpot_ms_p95": 173.65,
+    "e2e_ms_p50": 10295.4,
+    "e2e_ms_p95": 16692.3,
+    "e2e_ms_p99": 17816.7,
+    "decode_rate_tok_s": 6.6
+  },
+  "compare": {
+    "label": "compare (Q2_K)",
+    "model_path": "models\\Qwen2.5-7B-Instruct-Q2_K.gguf",
+    "n_threads": 12,
+    "n_ctx": 2048,
+    "n_batch": 512,
+    "n_gpu_layers": 99,
+    "load_ms": 6880.0,
+    "ttft_ms_p50": 821.6,
+    "ttft_ms_p95": 7433.0,
+    "tpot_ms_p50": 255.73,
+    "tpot_ms_p95": 268.76,
+    "e2e_ms_p50": 17262.3,
+    "e2e_ms_p95": 23194.2,
+    "e2e_ms_p99": 24403.2,
+    "decode_rate_tok_s": 3.9
+  }
+}

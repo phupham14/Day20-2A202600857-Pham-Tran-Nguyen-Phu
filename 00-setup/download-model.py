@@ -37,9 +37,9 @@ TIERS: dict[str, tuple[str, str, str]] = {
         "Llama-3.2-3B-Instruct-Q2_K.gguf",
     ),
     "Qwen2.5-7B-Instruct": (
-        "Qwen/Qwen2.5-7B-Instruct-GGUF",
-        "qwen2.5-7b-instruct-q4_k_m.gguf",
-        "qwen2.5-7b-instruct-q2_k.gguf",
+        "bartowski/Qwen2.5-7B-Instruct-GGUF",
+        "Qwen2.5-7B-Instruct-Q4_K_M.gguf",
+        "Qwen2.5-7B-Instruct-Q2_K.gguf",
     ),
 }
 

@@ -20,13 +20,14 @@ from pathlib import Path
 
 LLAMA_BENCH = Path("BONUS-llama-cpp-optimization/llama.cpp/build/bin/llama-bench")
 LLAMA_BENCH_EXE = LLAMA_BENCH.with_suffix(".exe")
+LLAMA_BENCH_FALLBACK = Path(r"C:\Users\Admin\Downloads\llama-b9775-bin-win-vulkan-x64\llama-bench.exe")
 
-# llama-bench prints a markdown-ish table; this regex grabs the tg128 (decode) row.
-TG_RE = re.compile(r"\|\s*tg128\s*\|\s*([0-9.]+)\s*±")
+# llama-bench prints a markdown table; grab any tg* (decode) row — e.g. tg64, tg128.
+TG_RE = re.compile(r"\|\s*tg\d+\s*\|\s*([0-9.]+)\s*±")
 
 
 def find_bench() -> Path:
-    for p in (LLAMA_BENCH, LLAMA_BENCH_EXE):
+    for p in (LLAMA_BENCH, LLAMA_BENCH_EXE, LLAMA_BENCH_FALLBACK):
         if p.exists():
             return p
     print(f"ERROR: llama-bench not found at {LLAMA_BENCH}", file=sys.stderr)

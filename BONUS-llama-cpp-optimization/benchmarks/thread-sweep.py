@@ -23,7 +23,8 @@ LLAMA_BENCH_EXE = LLAMA_BENCH.with_suffix(".exe")
 LLAMA_BENCH_FALLBACK = Path(r"C:\Users\Admin\Downloads\llama-b9775-bin-win-vulkan-x64\llama-bench.exe")
 
 # llama-bench prints a markdown table; grab any tg* (decode) row — e.g. tg64, tg128.
-TG_RE = re.compile(r"\|\s*tg\d+\s*\|\s*([0-9.]+)\s*±")
+# Don't match ± to avoid Windows CP1252/UTF-8 encoding ambiguity.
+TG_RE = re.compile(r"\|\s*tg\d+\s*\|\s*([0-9.]+)")
 
 
 def find_bench() -> Path:
@@ -62,7 +63,7 @@ def run_one(bench: Path, model: str, threads: int, n_gpu_layers: int) -> float:
         "-r", "2",
     ]
     print(f"   running: {' '.join(cmd[1:])}")
-    out = subprocess.run(cmd, capture_output=True, text=True, check=False).stdout
+    out = subprocess.run(cmd, capture_output=True, text=True, encoding="utf-8", errors="replace", check=False).stdout
     m = TG_RE.search(out)
     if not m:
         # Fall back: scan for any decimal followed by t/s
